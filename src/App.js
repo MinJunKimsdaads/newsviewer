@@ -8,6 +8,8 @@ function App() {
   const [category, setCategory] = useState('all');
   const onSelect = useCallback(category => setCategory(category),[]);
 
+  console.log('20230628');
+
  
   
   return (
