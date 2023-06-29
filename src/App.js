@@ -1,22 +1,23 @@
-import { useCallback, useState } from "react";
-
-import Category from "./component/Category";
-import NewsList from "./component/NewsList";
-import axios from "axios";
+// import { useCallback, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import NewsPage from "./component/NewsPage";
+// import { useParams } from "react-router-dom";
 
 function App() {
-  const [category, setCategory] = useState('all');
-  const onSelect = useCallback(category => setCategory(category),[]);
+  // const [category, setCategory] = useState('all');
+  // const onSelect = useCallback(category => setCategory(category),[]);
 
-  console.log('20230628');
+  // const category1 = useParams();
+  // console.log(category1);
 
- 
-  
+
   return (
-    <div className="App">
-      <Category category={category} onSelect={onSelect}></Category>
-      <NewsList category={category}></NewsList>
-    </div>
+    
+    <Routes>
+      <Route path={`/:category?`} element={<NewsPage></NewsPage>}></Route>
+
+
+    </Routes>
   );
 }
 

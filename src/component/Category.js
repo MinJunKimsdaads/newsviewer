@@ -1,5 +1,7 @@
 import styles from '../Box.module.css';
-function Category({onSelect, category}){
+import { Link } from 'react-router-dom';
+
+function Category(){
     const categories = [
         {
             name:'all',
@@ -33,7 +35,7 @@ function Category({onSelect, category}){
     return(
         <div className={styles.categoryBox}>
             {categories.map((e)=>{
-                return (<span className={e.name == category ? styles.activeCategory : null} key={e.name} onClick={()=>onSelect(e.name)}>{e.text}</span>)
+                return (<Link to={`/${e.name}`} key={e.name}>{e.text}</Link>)
             })}
         </div>
     )
