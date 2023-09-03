@@ -2,6 +2,7 @@
 import { Route, Routes } from "react-router-dom";
 import NewsPage from "./component/NewsPage";
 // import { useParams } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   // const [category, setCategory] = useState('all');
@@ -15,8 +16,6 @@ function App() {
     
     <Routes>
       <Route path={`/:category?`} element={<NewsPage></NewsPage>}></Route>
-
-
     </Routes>
   );
 }
